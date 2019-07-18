@@ -1,0 +1,16 @@
+{
+  "name": "mps",
+  "version": "1.0.0",
+  "description": "A web based programming collaboration tool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "programming",
+    "collaboration",
+    "coding"
+  ],
+  "author": "Jeffery selly",
+  "license": "ISC"
+}

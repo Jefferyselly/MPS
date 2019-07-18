@@ -1,0 +1,37 @@
+/* Initialize Fonts to be used */
+@font-face{
+	font-family : 'AucoinExtBol';
+	src : '../fonts/AucoinExtBol.ttf';
+}
+
+/* Global styles */
+body{
+	font-family: 'AucoinExtBol', serif;
+
+}
+a{
+	color : white;
+}
+.contain-body{
+	margin : 0 15%;
+}
+.cont{
+	background-color: #29293d;
+}
+.cont h1, .cont h2, .cont h3, .cont h4, .cont h5{
+	color : white;
+}
+
+
+/* Homepage individual ID's */
+#bottom-display{
+	
+}
+#bottom-display .home-icon{
+	margin-left : 2%;
+	color : #29293d;
+}
+#header-menu a:hover{
+	color : white;
+	border-bottom : 2px solid #dc3545;
+}
