@@ -4,7 +4,8 @@
   "description": "A web based programming collaboration tool",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [
     "programming",
@@ -12,5 +13,29 @@
     "coding"
   ],
   "author": "Jeffery selly",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "crypto-js": "^3.1.9-1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.4",
+    "mongoose": "^5.2.13",
+    "sitemap": "^4.1.1",
+    "validator": "^10.8.0",
+    "wysiwyg-editor-node-sdk": "^3.0.0-beta.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jefferyselly/MPS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jefferyselly/MPS/issues"
+  },
+  "homepage": "https://github.com/Jefferyselly/MPS#readme"
 }

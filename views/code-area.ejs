@@ -1,0 +1,157 @@
+<% include ./partials/header %>
+	<!-- main area -->
+	<main class="main">
+		<div class="col">
+			<div class="row">
+				<div class="col-md-2" id="sidebar">
+					<!-- side menu -->
+					<br>
+					<b>Find a Course</b>
+
+					<form>
+						<input type="search" name="course-name" class="form-control" placeholder="Course name">	
+
+						<button type="submit" class="btn btn-block btn-success"> Find </button>
+					</form>
+					<br>
+
+					<form id="create-class">
+					<div class="row">
+						<div class="col-md-7">
+					<b><font size="3">Create a class</font></b>
+
+					
+						<input type="search" name="course-title" id="class-title" class="form-control" placeholder="Class name">	
+
+						<button type="submit" class="btn btn-block btn-success" id="create-class"> Create Class </button>
+					
+					<br>
+					</div>
+					<div class="col-md-5"><select class="form-control s-area" id="lang">
+						<option> Lang </option>
+						<option value="?compileLang=Csharp&id=1&mime="> C# </option>
+						<option value="Csharp&id=1&mime="> C# </option>
+						<option value="VB.NET&id=2&mime="> VB.NET </option>
+						<option value="Fsharp&id=3&mime=text/x-fsharp"> F# </option>
+						<option value="Java&id=4&mime=text/x-java"> Java </option>
+						<option value="Python&id=5&mime=text/x-python"> Python </option>
+						<option value="C&id=6&mime=text/x-csrc"> C (gcc)</option>
+						<option value="CPP&id=7&mime=text/x-c++src"> C++ (gcc)</option>
+						<option value="PHP&id=8&mime=text/x-php"> PHP </option>
+						<option value="Pascal&id=9&mime=text/x-pascal"> Pascal </option>
+						<option value="Objective-C&id=10&mime=text/x-objectivec"> Objective-C </option>
+						<option value="Haskell&id=11&mime=text/x-haskell"> Haskell  </option>
+						<option value="Ruby&id=12&mime=text/x-ruby"> Ruby  </option>
+						<option value="Perl&id=13&mime=text/x-perl"> Perl  </option>
+						<option value="Lua&id=14&mime=text/x-lua"> Lua  </option>
+						<option value="Sql&id=16&mime=text/x-sql"> Sql  </option>
+						<option value="JS&id=17&mime=text/javascript"> Javascript  </option>
+						<option value="Lisp&id=18&mime=text/x-common-lisp"> Lisp  </option>
+						<option value="Prolog&id=19&mime=text/x-common-lisp"> Prolog  </option>
+						<option value="Go&id=20&mime=text/x-go"> Go </option>
+						<option value="Scala&id=21&mime=text/x-scala"> Scala </option>
+						<option value="Scala&id=22&mime=text/x-scheme"> Scheme </option>
+						<option value="NodeJS&id=23&mime=text/javascript"> NodeJS </option>
+						<option value="Python 3&id=24&mime=text/x-python"> Python 3 </option>
+						<option value="Octave&id=25&mime=text/x-octave"> Octave </option>
+						<option value="C&id=26&mime=text/x-csrc"> C(C lang) </option>
+						<option value="Cpp&id=27&mime=text/x-c++src"> C++(C lang) </option>
+						<option value="Cpp&id=28&mime=text/x-c++src"> C++(vc++) </option>
+						<option value="C&id=29&mime=text/x-csrc"> C(vc) </option> 
+						<option value="D&id=30&mime=text/x-d"> D </option> 
+						<option value="R&id=31&mime=text/x-rsrc"> R </option> 
+						<option value="R&id=32&mime=text/x-tcl"> TCL </option> 
+						<option value="Mysql&id=33&mime=text/x-mysql"> Mysql </option> 
+						<option value="PostgreSql&id=34&mime=text/x-pgsql"> Postgressql </option> 
+						<option value="Oracle&id=37&mime=text/x-swift"> Swift </option> 
+						<option value="Bash&id=38&mime=text/x-mllike"> Bash </option> 
+						<option value="Bash&id=39&mime=text/x-mllike"> Ada </option> 
+						<option value="Erlang&id=40&mime=text/x-erlang"> Erlang </option> 
+						<option value="Elixir&id=41&mime=text/x-erlang"> Elixir </option> 
+						<option value="Ocaml&id=42&mime=text/x-erlang"> Ocaml </option> 
+						<option value="kotlin&id=43&mime=text/x-squirrel"> Kotlin </option> 
+						<option value="Brainfuck&id=44&mime=text/x-brainfuck"> Brainfuck </option> 
+						<option value="Fortran&id=45&mime=text/x-fortran"> Fortran </option>
+					</select></div>
+				</div>
+			</form>
+					
+
+				</div>
+				<div class="col-md-5">
+
+						<textarea id="code" class="CodeMirror-sizer">
+						
+								
+								
+								
+								
+								
+							</textarea>
+							<div class="windowLabelCont">
+									<button onclick="showWindowLabels()" class="windowLabel" id="editorLabel">  <i class="mr-1 fa fa-caret-down"></i></button>
+									<div id="labelList" class="labelList">
+										<a href="?compileLang=Csharp&id=1&mime="> C# </a>
+										<a href="?compileLang=VB.NET&id=2&mime="> VB.NET </a>
+										<a href="?compileLang=Fsharp&id=3&mime=text/x-fsharp"> F# </a>
+										<a href="?compileLang=Java&id=4&mime=text/x-java"> Java </a>
+										<a href="?compileLang=Python&id=5&mime=text/x-python"> Python </a>
+										<a href="?compileLang=C&id=6&mime=text/x-csrc"> C (gcc)</a>
+										<a href="?compileLang=CPP&id=7&mime=text/x-c++src"> C++ (gcc)</a>
+										<a href="?compileLang=PHP&id=8&mime=text/x-php"> PHP </a>
+										<a href="?compileLang=Pascal&id=9&mime=text/x-pascal"> Pascal </a>
+										<a href="?compileLang=Objective-C&id=10&mime=text/x-objectivec"> Objective-C </a>
+										<a href="?compileLang=Haskell&id=11&mime=text/x-haskell"> Haskell  </a>
+										<a href="?compileLang=Ruby&id=12&mime=text/x-ruby"> Ruby  </a>
+										<a href="?compileLang=Perl&id=13&mime=text/x-perl"> Perl  </a>
+										<a href="?compileLang=Lua&id=14&mime=text/x-lua"> Lua  </a>
+										<a href="?compileLang=Sql&id=16&mime=text/x-sql"> Sql  </a>
+										<a href="?compileLang=JS&id=17&mime=text/javascript"> Javascript  </a>
+										<a href="?compileLang=Lisp&id=18&mime=text/x-common-lisp"> Lisp  </a>
+										<a href="?compileLang=Prolog&id=19&mime=text/x-common-lisp"> Prolog  </a>
+										<a href="?compileLang=Go&id=20&mime=text/x-go"> Go </a>
+										<a href="?compileLang=Scala&id=21&mime=text/x-scala"> Scala </a>
+										<a href="?compileLang=Scala&id=22&mime=text/x-scheme"> Scheme </a>
+										<a href="?compileLang=NodeJS&id=23&mime=text/javascript"> NodeJS </a>
+										<a href="?compileLang=Python 3&id=24&mime=text/x-python"> Python 3 </a>
+										<a href="?compileLang=Octave&id=25&mime=text/x-octave"> Octave </a>
+										<a href="?compileLang=C&id=26&mime=text/x-csrc"> C(C lang) </a>
+										<a href="?compileLang=Cpp&id=27&mime=text/x-c++src"> C++(C lang) </a>
+										<a href="?compileLang=Cpp&id=28&mime=text/x-c++src"> C++(vc++) </a>
+										<a href="?compileLang=C&id=29&mime=text/x-csrc"> C(vc) </a> 
+										<a href="?compileLang=D&id=30&mime=text/x-d"> D </a> 
+										<a href="?compileLang=R&id=31&mime=text/x-rsrc"> R </a> 
+										<a href="?compileLang=R&id=32&mime=text/x-tcl"> TCL </a> 
+										<a href="?compileLang=Mysql&id=33&mime=text/x-mysql"> Mysql </a> 
+										<a href="?compileLang=PostgreSql&id=34&mime=text/x-pgsql"> Postgressql </a> 
+										<a href="?compileLang=Oracle&id=37&mime=text/x-swift"> Swift </a> 
+										<a href="?compileLang=Bash&id=38&mime=text/x-mllike"> Bash </a> 
+										<a href="?compileLang=Bash&id=39&mime=text/x-mllike"> Ada </a> 
+										<a href="?compileLang=Erlang&id=40&mime=text/x-erlang"> Erlang </a> 
+										<a href="?compileLang=Elixir&id=41&mime=text/x-erlang"> Elixir </a> 
+										<a href="?compileLang=Ocaml&id=42&mime=text/x-erlang"> Ocaml </a> 
+										<a href="?compileLang=kotlin&id=43&mime=text/x-squirrel"> Kotlin </a> 
+										<a href="?compileLang=Brainfuck&id=44&mime=text/x-brainfuck"> Brainfuck </a> 
+										<a href="?compileLang=Fortran&id=45&mime=text/x-fortran"> Fortran </a>
+										
+										
+									</div>
+								</div>
+				</div>
+			
+				
+				<div class="col-md-5" id="codeOutput" class="codeOutput">
+					<div class="windowLabelCont">
+						<button class="windowLabel" style="padding : 6px" id="run"> RUN </button>
+						<div class="code-display" id="code-display">
+							dqwj
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+<% include ./partials/footer %>

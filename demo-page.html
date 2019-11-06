@@ -1,0 +1,45 @@
+<% include "./partials/header.ejs" %>
+	<!-- main area -->
+	<main class="main">
+		<div class="col">
+			<div class="row">
+				<div class="col-md-2" id="sidebar">
+					<!-- side menu -->
+					<br>
+					<b>Find a Course</b>
+
+					<form>
+						<input type="search" name="course-name" class="form-control" placeholder="Course name">	
+
+						<button type="submit" class="btn btn-block btn-success"> Find </button>
+					</form>
+					<br>
+					
+
+				</div>
+
+				<div class="col-md-5" id="code" class="CodeMirror-sizer">
+					<div class="windowLabelCont">
+						<button onclick="showWindowLabels()" class="windowLabel"> JS <i class="mr-1 fa fa-caret-down"></i></button>
+						<div id="labelList" class="labelList">
+							<a href=""> HTML </a>
+							<a href=""> Javascript </a>
+							<a href=""> css </a>
+						</div>
+					</div>
+					
+					
+
+				</div>
+				<div class="col-md-5" id="codeOutput" class="codeOutput">
+					<div class="windowLabelCont">
+						<button class="windowLabel"> OUTPUT </button>
+						<div class="code-display">
+							dqwj
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+</main>

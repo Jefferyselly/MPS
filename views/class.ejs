@@ -1,0 +1,39 @@
+<% include partials/header.ejs %>
+
+	<div class="block-quote text-center mt-2" style="color : white"> Lets get you started, choose a class </div>
+	<br>
+	<div class="row">
+		<% theClass.forEach(function(classes){ %>
+
+
+		<div class="card ml-3 my-3" style="width : 20rem">
+							  <div class="card-body ">
+							    <h4 class="card-title"> <%= classes.classTitle %></h4>
+							    <h6 class="card-subtitle mb-2 text-muted"> <i class="fa fa-code fa-2x"> </i></h6>
+							    <p class="card-text"> Stack : <%= classes.language %></p>
+							    <center><a href="/list_lessons?id=<%= classes._id %>" class="btn btn-success"> Start Lesson</a></center>
+							    
+							  </div>
+							</div>
+
+	<% }) %>
+
+
+
+
+
+	
+	
+
+		
+
+							</div>
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+	<div class="block-quote text-center mt-2" style="color : white"> Choose a lesson from this class</div>
+	<br>
+	<div class="row">
+		<% lessons.forEach(function(lesson){ %>
+
+			<div class="card mx-3 my-3" style="width : 20rem">
+							  <div class="card-body">
+							    <h4 class="card-title"> <%= lesson.lessonTitle %></h4>
+							    <h6 class="card-subtitle mb-2 text-muted"> <%= lesson.language %> </h6>
+							    <p class="card-text"> <%= lesson.lessonDescription %></p>
+							    <a href="/startLesson?id=<%= lesson._id %>" class="btn btn-success"> LETS GO!! </a>
+							    
+							  </div>
+							</div>
+
+	<% }) %>
+
+
+
+
+						
+							</div>
+
+							
+
+	
+	</div>
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

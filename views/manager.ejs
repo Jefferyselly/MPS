@@ -1,0 +1,136 @@
+<% include ./partials/header %>
+
+	<!-- main area -->
+	<main class="main">
+		<div class="col">
+			<div class="row">
+				<div class="col-md-2" id="sidebar">
+					<!-- side menu -->
+					<br>
+					<b><font size="3">Find a Course</font></b>
+
+					<form>
+						<input type="search" name="course-name" class="form-control" placeholder="Course name">	
+
+						<button type="submit" class="btn btn-block btn-success"> Find </button>
+					</form>
+					<br>
+
+					<!-- ************* Create a new class ****************------>
+					<form id="create-class">
+					<div class="row">
+						<div class="col-md-7">
+					<b><font size="3">Create a class</font></b>
+
+					
+						<input type="search" name="course-title" id="class-title" class="form-control" placeholder="Class name">	
+
+						<button type="submit" class="btn btn-block btn-success" id="create-class"> Create Class </button>
+					
+					<br>
+					</div>
+					<div class="col-md-5"><select class="form-control s-area" id="lang">
+						<option> Lang </option>
+						<option value="JS"> Javascript </option>
+					</select></div>
+				</div>
+			</form>
+					
+
+				</div>
+
+				<div class="col-md-10">
+					<!-- datatables for addition of lessons -->
+
+					 <!-- DataTables Example -->
+					 <div class="card mb-3">
+						<div class="card-header" style="color:black">
+						  <i class="fas fa-table"></i>
+							Manage additions  | <a href="/additions" style="color : black"> Manage Additions </a></div>
+						<div class="card-body">
+						  <div class="table-responsive">
+							<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="color : black">
+							  <thead>
+								<tr>
+								  <th> Class title </th>
+								  
+								  <th> language </th>
+								  <th>Action</th>
+									</thead>
+							  								  <tbody>
+			  
+			  
+			  
+								  <% managerDetails.forEach(function(mgx){%>
+								  <tr class="<%= mgx._id %> ">
+									<td> <%= mgx.classTitle %> </td>
+									
+									<td> <%= mgx.language %> </td>
+									<td><a href="/additions?id=<%= mgx._id %>"> <button class="btn btn-info" id="<%= mgx._id %>"> Edit </button>  </a><button class="btn btn-danger disapprove" id="<%= mgx._id %>"> Delete </button></td> 
+			  
+									</tr>
+								  <%}) %>
+			  
+								 
+								
+			  
+					   
+							   
+							  </tbody>
+							</table>
+						  </div>
+						</div>
+						
+					  </div>
+			  
+					</div>
+					<!-- /.container-fluid -->
+
+				</div>
+				
+
+				
+				
+
+				
+				
+			</div>
+		</div>
+	</main>
+
+ 
+
+
+	
+
+<script>
+
+	$(document).ready(function(){
+		$('.disapprove').click(function(){
+   
+		const id = $(this).attr("id");
+
+   
+		if(confirm("Are you sure you want to delete ? ")){
+
+			
+		$.ajax({
+		type : "POST",
+		url : "/deleteClass",
+		data : ({
+		 id : id
+		}),
+		cache : false,
+		success : function(html){
+		$("."+id).fadeOut('slow')
+		}
+		})
+		}
+		else{
+		return false
+		}
+		})
+	})
+</script>
+
+<% include ./partials/footer %>

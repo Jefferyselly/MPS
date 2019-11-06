@@ -1,0 +1,121 @@
+<% include ./partials/header %>
+
+	<!-- main area -->
+	<main class="main">
+		<div class="col">
+			<div class="row">
+				<div class="col-md-2" id="sidebar">
+					<!-- side menu -->
+					<br>
+					<b><font size="3">Find a Course</font></b>
+
+					<form>
+						<input type="search" name="course-name" class="form-control" placeholder="Course name">	
+
+						<button type="submit" class="btn btn-block btn-success"> Find </button>
+					</form>
+					<br>
+
+					<!-- ************* Create a new class ****************------>
+					<form id="create-class">
+					<div class="row">
+						<div class="col-md-7">
+					<b><font size="3">Create a class</font></b>
+
+					
+						<input type="search" name="course-title" id="class-title" class="form-control" placeholder="Class name">	
+
+						<button type="submit" class="btn btn-block btn-success" id="create-class"> Create Class </button>
+					
+					<br>
+					</div>
+					<div class="col-md-5"><select class="form-control s-area" id="lang">
+						<option> Lang </option>
+						<option value="JS"> Javascript </option>
+					</select></div>
+				</div>
+			</form>
+					
+
+				</div>
+				<div class="col-md-10">
+					<div class="row">
+
+						<div class="col-md-6">
+															
+							
+							<div class="card card-fluid px-3 py-3" style="color : black">
+							<%- startLesson.lessonContent %> 
+							</div>
+							
+
+						</div>
+
+						<div class="col-md-6">
+							<!-- code & output area -->
+							<textarea id="code">
+
+								<%= startLesson.lessonCode %>
+
+							</textarea>
+
+							
+					<div class="windowLabelCont">
+						<button class="windowLabel" id="editorLabel"></button>
+					
+					</div>
+					
+					
+					
+
+
+
+
+							
+
+				<div id="codeOutput" class="CodeMirror-sizer" style="min-height : 200px;border:1px solid black">
+						
+					<div class="windowLabelCont">
+						<button class="windowLabel" id="run" style="padding : 6px">  RUN  </button>
+					</div>
+					<div class="code-display mt-4 ml-3" id="code-display">
+							code ouput shows here...
+						</div>
+
+								
+				</div>
+
+				
+						</div>
+
+						
+
+				
+						
+					</div>
+
+					
+					
+
+				</div>
+
+				
+				
+
+				
+
+				
+				
+			</div>
+		</div>
+	</main>
+
+ 
+
+
+	
+
+
+
+
+<% include ./partials/footer %>
