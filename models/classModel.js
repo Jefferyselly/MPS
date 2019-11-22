@@ -15,6 +15,9 @@ let classSchema = new mongoose.Schema({
 	language_code : {
 		type : String
 	},
+	language_mime:{
+		type : String
+	},
 	created_by : {
 		type : String
 	},

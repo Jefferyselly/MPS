@@ -9,7 +9,7 @@ class Class{
 		const myClass = new classModel(body);
 
 		myClass.save().then((cl) => {
-			res.cookie("ed_class_title",cl.classTitle).cookie("compileLang",cl.language).cookie("ed_class_id",cl._id).send(cl);
+			res.cookie("ed_class_title",cl.classTitle).cookie("compileLang",cl.language).cookie("ed_class_id",cl._id).cookie("mime",cl.language_mime).cookie("languageChoice",cl.language_code).send(cl);
 		})
 
 	}

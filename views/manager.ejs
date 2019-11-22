@@ -31,7 +31,49 @@
 					</div>
 					<div class="col-md-5"><select class="form-control s-area" id="lang">
 						<option> Lang </option>
-						<option value="JS"> Javascript </option>
+						
+						<option value="Csharp&id=1&mime=text/x-csharp"> C# </option>
+						<option value="VB.NET&id=2&mime=text/x-vb"> VB.NET </option>
+						<option value="Fsharp&id=3&mime=text/x-fsharp"> F# </option>
+						<option value="Java&id=4&mime=text/x-java"> Java </option>
+						<option value="Python&id=5&mime=text/x-python"> Python </option>
+						<option value="C&id=6&mime=text/x-csrc"> C (gcc)</option>
+						<option value="CPP&id=7&mime=text/x-c++src"> C++ (gcc)</option>
+						<option value="PHP&id=8&mime=text/x-php"> PHP </option>
+						<option value="Pascal&id=9&mime=text/x-pascal"> Pascal </option>
+						<option value="Objective-C&id=10&mime=text/x-objectivec"> Objective-C </option>
+						<option value="Haskell&id=11&mime=text/x-haskell"> Haskell  </option>
+						<option value="Ruby&id=12&mime=text/x-ruby"> Ruby  </option>
+						<option value="Perl&id=13&mime=text/x-perl"> Perl  </option>
+						<option value="Lua&id=14&mime=text/x-lua"> Lua  </option>
+						<option value="Sql&id=16&mime=text/x-sql"> Sql  </option>
+						<option value="JS&id=17&mime=text/javascript"> Javascript  </option>
+						<option value="Lisp&id=18&mime=text/x-common-lisp"> Lisp  </option>
+						<option value="Prolog&id=19&mime=text/x-common-lisp"> Prolog  </option>
+						<option value="Go&id=20&mime=text/x-go"> Go </option>
+						<option value="Scala&id=21&mime=text/x-scala"> Scala </option>
+						<option value="Scala&id=22&mime=text/x-scheme"> Scheme </option>
+						<option value="NodeJS&id=23&mime=text/javascript"> NodeJS </option>
+						<option value="Python 3&id=24&mime=text/x-python"> Python 3 </option>
+						<option value="Octave&id=25&mime=text/x-octave"> Octave </option>
+						<option value="C&id=26&mime=text/x-csrc"> C(C lang) </option>
+						<option value="Cpp&id=27&mime=text/x-c++src"> C++(C lang) </option>
+						<option value="Cpp&id=28&mime=text/x-c++src"> C++(vc++) </option>
+						<option value="C&id=29&mime=text/x-csrc"> C(vc) </option> 
+						<option value="D&id=30&mime=text/x-d"> D </option> 
+						<option value="R&id=31&mime=text/x-rsrc"> R </option> 
+						<option value="R&id=32&mime=text/x-tcl"> TCL </option> 
+						<option value="Mysql&id=33&mime=text/x-mysql"> Mysql </option> 
+						<option value="PostgreSql&id=34&mime=text/x-pgsql"> Postgressql </option> 
+						<option value="Oracle&id=37&mime=text/x-swift"> Swift </option> 
+						<option value="Bash&id=38&mime=text/x-mllike"> Bash </option> 
+						<option value="Bash&id=39&mime=text/x-mllike"> Ada </option> 
+						<option value="Erlang&id=40&mime=text/x-erlang"> Erlang </option> 
+						<option value="Elixir&id=41&mime=text/x-erlang"> Elixir </option> 
+						<option value="Ocaml&id=42&mime=text/x-erlang"> Ocaml </option> 
+						<option value="kotlin&id=43&mime=text/x-squirrel"> Kotlin </option> 
+						<option value="Brainfuck&id=44&mime=text/x-brainfuck"> Brainfuck </option> 
+						<option value="Fortran&id=45&mime=text/x-fortran"> Fortran </option>
 					</select></div>
 				</div>
 			</form>
@@ -66,7 +108,7 @@
 									<td> <%= mgx.classTitle %> </td>
 									
 									<td> <%= mgx.language %> </td>
-									<td><a href="/additions?id=<%= mgx._id %>"> <button class="btn btn-info" id="<%= mgx._id %>"> Edit </button>  </a><button class="btn btn-danger disapprove" id="<%= mgx._id %>"> Delete </button></td> 
+									<td><a href="/additions?id=<%= mgx._id %>"> <button class="btn btn-info" id="<%= mgx._id %>"> Edit </button>  </a><button class="btn btn-danger disapprove" id="<%= mgx._id %>"> Delete </button> <button class="btn btn-success" onclick="newlesson(this)" id="<%= mgx._id %>"> New </button></td> 
 			  
 									</tr>
 								  <%}) %>
@@ -131,6 +173,14 @@
 		}
 		})
 	})
+
+	function newlesson(th){
+		//store the class id in browser.
+		
+		storeInBrowser("ed_class_id",th.id)
+		
+		MicroModal.show('modal-1');
+	}
 </script>
 
 <% include ./partials/footer %>

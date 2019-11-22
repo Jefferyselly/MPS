@@ -15,6 +15,11 @@ const {User} = require("./class/User.js");
 const {Class} = require("./class/Class.js");
 const {Lesson} = require("./class/Lesson.js");
 
+/******* Models ********/
+const {classModel} = require("./models/classModel.js");
+const {lessonModel} = require("./models/lessonModel.js");
+const {UserModel} = require("./models/UserModel.js");
+
 
 
 
@@ -71,17 +76,37 @@ app.post("/login", (req,res) => {
 })
 app.get("/instructor-panel",(req,res) => {
 
+	let content = "";
+	let code = "";
+
+	//Check if content is to be edited, then get the required fields.
+
+	if(req.query.id){
+		//Get the content and code from database.
+		lessonModel.findOne({_id : req.query.id}).then((editContent) => {
+			content = editContent.lessonContent;
+			code = editContent.lessonCode;
+			res.cookie("compileLang", editContent.language).render("instructor-panel.ejs",{
+				content,
+				code
+			})
+		})
+	}
+
 	//check if query exists for a compile language, then proceed with creating cookie for it.
-
-
-	
-	if(req.query.compileLang){
+else if(req.query.compileLang){
 		
-		res.cookie("compileLang",req.query.compileLang).cookie("languageChoice", req.query.id).render("instructor-panel.ejs")
+		res.cookie("compileLang",req.query.compileLang).cookie("languageChoice", req.query.id).render("instructor-panel.ejs",{
+			code,
+			content
+		})
 	}
 	else{
 
-		res.render("instructor-panel.ejs");
+		res.render("instructor-panel.ejs",{
+			code,
+			content
+		});
 	}
 	
 })
@@ -90,6 +115,21 @@ app.post("/create-class", (req,res) => {
 
 	const body = req.body;
 	body.created_by_id = req.cookies["user_id"]
+
+	//get the language code,mime and language name.
+	console.log(body.language)
+
+	const lengthOfStr = body.language.length; //Length of the string of languaged parsed.
+
+	const posFirAmp = body.language.indexOf("&");
+
+	
+	const posLastAmp = body.language.lastIndexOf("&"); //Last position for &
+	
+
+	body.language_mime = body.language.slice(posLastAmp + 6,);
+	body.language_code = body.language.slice(posFirAmp + 4,posLastAmp)
+	body.language = body.language.slice(0,posFirAmp)
 
 	const newClass = new Class();
 	newClass.newClass(req,res,body);
@@ -138,7 +178,7 @@ app.get("/new_lesson", (req,res) => {
 
 	const the_lesson = new Lesson()
 	the_lesson.create_lesson(req,res,body);
-
+	
 })
 
 app.post("/saveLesson", (req,res) => {

@@ -3,13 +3,13 @@
       <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
         <div class="modal__header">
           <h2 class="btn btn-success">
-            Your class has been created
+            Class initiated 
           </h2>
           <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
 
         </div>
         <div class="modal__content" id="modal-1-content">
-          <p> Proceed to creating a new lesson under this class</p>
+          Creae a New lesson</p>
           <p>
             <form method="get" action="/new_lesson">
             	<p><input type="text" name="lessonTitle" placeholder="Lesson Name" class="form-control"></p>
@@ -68,6 +68,8 @@
   
  $(document).ready(function(){
    document.getElementById("run").addEventListener("click",function(){
+     //start the preloader
+     start_preloader();
      
     var to_compile = {
 				"LanguageChoice" : getCookie("languageChoice"),
@@ -82,16 +84,20 @@
             if(data.Result == null){
               const container = document.getElementById("code-display");
             container.innerHTML = JSON.stringify(data.Errors);
-			        // alert(JSON.stringify(data));
+              // alert(JSON.stringify(data));
+              stop_preloader();
             }else{
               const container = document.getElementById("code-display");
               container.innerHTML = JSON.stringify(data.Result);
+              stop_preloader();
             }
             
 			    }).fail(function(data, err) {
             const container = document.getElementById("code-display");
-            container.innerHTML = JSON.stringify(data.statusText);
-			        // alert("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
+            
+            container.innerHTML = JSON.stringify(err);
+              // alert("fail " + JSON.stringify(data) + " " + JSON.stringify(err));
+              stop_preloader();
             
 		        });
 

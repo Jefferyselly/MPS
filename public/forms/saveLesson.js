@@ -19,7 +19,7 @@ class saveLesson{
 
 		
 
-		console.log(formValues)
+		
 		
 
 		$.ajax({
@@ -31,7 +31,7 @@ class saveLesson{
 
 				stop_preloader();
 				
-				$("#progress_btn2").innerHTML = "dqwkdqn"
+				$("#progress_btn2").innerHTML = "done"
 				
 			}
 		})

@@ -6,10 +6,14 @@ function deleteRemainingTime(){
 function stop_preloader(returnMessage = "Successful"){
     //load the preloader 
     const progress_btn = document.querySelector('#progress_btn');
+    const doneBtn = document.querySelector("#done_btn");
     
   
     progress_btn.removeAttribute('class');
     progress_btn.setAttribute('class','center-align d-none');
+
+    doneBtn.removeAttribute("class");
+    doneBtn.setAttribute("class", 'center-align d-block')
     
     }
 
@@ -18,9 +22,15 @@ function stop_preloader(returnMessage = "Successful"){
 function start_preloader(){
     //load the preloader 
 const progress_btn = document.querySelector('#progress_btn');
+const doneBtn = document.querySelector('#done_btn');
+
+doneBtn.removeAttribute('class');
+    doneBtn.setAttribute('class', "center-align d-none");
    
     progress_btn.removeAttribute('class');
     progress_btn.setAttribute('class','center-align d-block');
+
+    
 }
 function changeBgColor(DOM_id){
     // function to change background color of a container
